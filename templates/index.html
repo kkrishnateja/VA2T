@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn{
+            margin: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .input{
+            padding: 10px;
+            width: 300px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        h3{
+            font-family: Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <h3>Youtube Video URL</h3>
+
+                {% if message %}
+                    <p class="message">{{message | safe}}</p>
+                {% endif %}
+                
+                <input 
+                type="text"
+                name="url"
+                placeholder="Enter the URL"
+                class="input"
+                >
+            </div>
+    
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+</body>
+</html>
