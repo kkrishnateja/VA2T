@@ -21,3 +21,5 @@ def submit():
 if __name__ == '__main__':
     app.debug =True
     app.run()
+    # app.run(debug=True, host='192.168.1.81', port=80)
+    # http://183.82.4.82:82
